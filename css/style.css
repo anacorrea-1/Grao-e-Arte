@@ -191,19 +191,21 @@ font-size: 62.5%;
     gap: 15px;
 }
 
+.brand-assinatura__textos h3{
+    color: var(--color-primary)
+}
+
 .brand-assinatura__textos {
     background-color: var(--color-bg-card);
     border-radius: 12px;
     padding: 30px;
     display: flex;
-    height: 255px;
+    height: 153px;
+    width: 450px;
     flex-direction: column;
     justify-content: center;
     gap: 15px;
     flex: 1;
-    min-width: 280px;
-    max-width: 360px;
-    width: auto;
     box-shadow: var(--shadow-hover);
 }
 
@@ -256,6 +258,17 @@ font-size: 62.5%;
   margin-top: 10px;
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+}
+
+.card-whatsapp{
+    position: fixed;
+    bottom: 10px;
+    max-width: 270px;
+    padding: 15px;
+    top: 820px;
+    right: 0px;
+    justify-content: center;
+
 }
 
 .footer {

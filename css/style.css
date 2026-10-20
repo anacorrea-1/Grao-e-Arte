@@ -121,30 +121,44 @@ font-size: 62.5%;
 
 
 .section-processo{
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    background-color: var(--color-bg-main);
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 60px 5%;
+    background-color: var(--color-bg-main);
+    gap: 40px;
+    box-sizing: border-box;
 
 }
 
 .section-processo__title{
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 700;
+    text-align: center;
+    color: var(--color-secondary);
 }
 
 .section-processo__card{
-    background-color:var(--color-bg-card);
-    border-radius: 20px;
-    height: 130px;
-    padding: 25px;
-    width: 770px;
+    background-color: var(--color-bg-card);
+    border-radius: 12px;
+    padding: 35px 45px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: var(--shadow-card);
+    box-sizing: border-box;
+    border: 2px dashed var(--color-border);
 }
 
 .section-processo__text{
-    width: 720px;
-    height: 85px;
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--color-text-muted);
     
 }
 

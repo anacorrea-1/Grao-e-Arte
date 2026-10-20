@@ -1,40 +1,46 @@
 # Grão & Arte - Torrefação e Café Especial
 
-## Visão Geral e Objetivo
-O Grão & Arte é uma aplicação front-end desenvolvida para representar uma marca de torrefação e comercialização de cafés especiais[cite 1, 4]. O objetivo do projeto é oferecer uma interface moderna, semântica, acessível e totalmente responsiva[cite 1], permitindo que apreciadores de cafés naveguem pelos microlotes disponíveis, entendam o processo artesanal de torra e conheçam os planos do clube de assinatura.
+## 1. Visão Geral e Objetivo do Projeto
+O **Grão & Arte** é uma aplicação web front-end desenvolvida para representar uma marca de torrefação artesanal e comercialização de cafés especiais. O projeto foi construído para simular um ambiente de desenvolvimento profissional, atendendo aos requisitos funcionais e não funcionais estabelecidos para a Turma A.
 
-Este projeto foi construído para aplicar conceitos de desenvolvimento front-end profissional com foco em arquitetura de código CSS, acessibilidade, semântica HTML e responsividade[cite 1].
-
----
-
-## Tecnologias e Conceitos Aplicados
-
-- HTML5 Semântico Uso de elementos semânticos (`header`, `main`, `section`, `article`, `details`, `summary`, `footer`) para garantir acessibilidade e estrutura clara[cite 1, 4, 5].
-- CSS3 Moderno
-  - Metodologia BEM (Block Element Modifier) Padrão rigoroso de nomenclatura de classes HTML e seletores CSS[cite 1].
-  - Design System com Custom Properties (Variáveis CSS) Centralização de tokens de cores, fontes, sombras e transições no `root`[cite 3, 6].
-  - Escala de Fontes REM e Porcentagem Raiz Unidades relativas para tipografia (`rem`) e ajuste proporcional nos elementos raiz.
-  - Flexbox Layout Utilizado para organização de cards e componentes flexíveis[cite 3, 4].
-  - Navegação Suave e Compensação do Header Aplicação de `scroll-behavior smooth` com ajuste de recuo para o menu fixo.
-  - Microinterações e Transições Pseudo-classes `hover` em botões, cards e links para aprimorar a experiência do usuário[cite 5].
-- Responsividade (Media Queries) Estruturação fluida de layout com pontos de quebra (breakpoints) adaptáveis a smartphones, tablets e desktops[cite 2, 3].
-- Google Fonts Importação e aplicação das famílias Merriweather (títulos) e Open Sans (corpo de texto)[cite 2, 6, 7].
-- Integração Externa (WhatsApp API) Botão flutuante para contato direto configurado com a API do WhatsApp utilizando o número oficial da Escola SENAI Henrique Lupo.
+O objetivo principal da aplicação é proporcionar uma experiência moderna, elegante e intuitiva para entusiastas de café especial, permitindo a navegação pelos microlotes disponíveis, apresentação do processo de torra, contratação de planos do clube de assinatura, esclarecimento de dúvidas frequentes (FAQ) e contato direto via API do WhatsApp.
 
 ---
 
-## Organização da Arquitetura de Arquivos
+## 2. Tecnologias e Conceitos Aplicados
 
-A estrutura do projeto segue a separação estrita de responsabilidades organizando o CSS de forma modular[cite 1, 11]
+### **HTML5 Semântico e Acessibilidade**
+* **Estrutura Clara:** Utilização rigorosa das tags semânticas (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<details>`, `<summary>`, `<footer>`, `<address>`).
+* **Navegação Suave e FAQ Interativo:** Implementação da seção de dúvidas com elementos nativos `<details>` e `<summary>`, além de links internos para rolagem fluida.
+
+### **CSS3, Arquitetura e Design System**
+* **Metodologia BEM (Block Element Modifier):** Padrão rigoroso de nomenclatura de classes HTML e seletores CSS (`.brand-card`, `.brand-card__image`, `.brand-card__title`) garantindo modularidade e reuso.
+* **Separação Estrita de Responsabilidades:** Organização modular do CSS em arquivos distintos (`variables.css`, `reset.css`, `style.css`, `responsive.css`) sem inline styles ou blocos `<style>`.
+* **Design System com Custom Properties (`:root`):** Centralização de tokens de cores, paleta do café artesanal, tipografia, sombras (`--shadow-card`, `--shadow-hover`), raios de borda e tempos de transição.
+* **Escala Base em REM (62.5%):** Ajuste proporcional no elemento raiz (`html { font-size: 62.5%; }`), fazendo com que `1rem = 10px` e mantendo a tipografia e os espaçamentos dinâmicos e acessíveis.
+* **Google Fonts:** Importação e aplicação das famílias tipográficas **Merriweather** (pesos 400 e 700 para títulos) e **Open Sans** (pesos 400, 600 e 700 para corpo de texto).
+
+### **Layout e Responsividade**
+* **Flexbox & CSS Grid:** Utilização de CSS Grid na seção de catálogo (`.brands__grid`) e Flexbox no cabeçalho, cards de assinatura e rodapé.
+* **Posicionamento Fixo e Compensação:** Cabeçalho (`.header`) e rodapé (`.footer`) fixados na tela (`position: fixed`), com tratamento de compensação do recuo de rolagem (`scroll-margin-top`).
+* **Botão Flutuante do WhatsApp:** Ícone fixado no canto inferior da tela (`position: fixed`), integrado diretamente à API do WhatsApp com o número oficial da Escola SENAI Henrique Lupo (`551633033800`).
+* **Media Queries (Adaptabilidade):** Regras de responsividade configuradas em `responsive.css` ajustando o layout para telas de smartphones e tablets.
+
+---
+
+## 3. Arquitetura de Arquivos
+
+O repositório está estruturado com a separação clara de responsabilidades:
 
 ```text
-grao-e-arte
-├── assets
-│   └── images          # Imagens do projeto e recursos visuais
-├── css
-│   ├── reset.css        # Normalização e reset dos estilos padrão do navegador
-│   ├── responsive.css   # Regras de responsividade e media queries
-│   ├── style.css        # Estilos principais da aplicação e componentes
-│   └── variables.css    # Design system, paleta de cores e tokens CSS
-├── index.html           # Estrutura HTML5 da página
-└── readme.md            # Documentação do projeto
+grao-e-arte/
+├── css/
+│   ├── reset.css        # Reset de estilos globais e configuração do rem (62.5%)
+│   ├── responsive.css   # Regras de responsividade e media queries para dispositivos móveis
+│   ├── style.css        # Estilos gerais da aplicação, componentes e seções
+│   └── variables.css    # Design System, variáveis globais (:root) e tokens de design
+├── src/
+│   └── img/             # Imagens locais do projeto e botões de mídia
+├── index.html           # Estrutura principal da aplicação em HTML5 semântico
+└── README.md            # Documentação técnica completa do projeto
+```
